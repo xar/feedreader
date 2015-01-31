@@ -1,0 +1,17 @@
+.items--subpage{
+  overflow: hidden;
+  h1{
+    padding-top: 40px;
+  }
+  font-size: rem(2.0);
+}
+.items--categories-spinner{
+  margin-top: 80px;
+}
+.items--feed{
+  overflow: scroll;
+  @include font-size(1.4);
+}
+.items--list{
+  margin-top: 20px;
+}

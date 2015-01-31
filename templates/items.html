@@ -1,0 +1,41 @@
+<div layout="row" style="height:100%;" class="items--subpage">
+<ui-view class="ng-scope" flex="33">
+  <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('min-width: 100px')" layout="vertical" layout-fill>
+      <md-toolbar class="md-theme-indigo">
+            <h1 class="md-toolbar-tools">Categories</h1>
+      </md-toolbar>
+      <md-content class="md-padding">
+        <div layout="row" layout-align="center center" class="items--categories-spinner" ng-show="categorySpinner">
+          <md-progress-circular class="md-accent md-hue-1" md-mode="indeterminate"></md-progress-circular>
+        </div>
+        <ul ng-repeat="item in items" ng-hide="categorySpinner">
+          <md-button ng-click="selectCat(item.id, item.label)">{{item.label}}</md-button>
+        </ul>
+      </md-content>
+    </md-sidenav>
+</ui-view>
+
+<div flex="66" class="items--feed">
+  <h1>Feed</h1>
+  <div layout="row" layout-align="center center" class="items--categories-spinner" ng-show="contentSpinner">
+          <md-progress-circular class="md-accent md-hue-1" md-mode="indeterminate"></md-progress-circular>
+        </div>
+        <div class="items--list">
+  <md-content ng-hide="contentSpinner">
+    <md-list ng-repeat="new in news.items" >
+      <md-item >
+        <md-item-content>
+          <div class="md-tile-content">
+            <h3>{{new.title}}</h3>
+            <h4>{{new.author}}</h4>
+            <p>
+              {{new.summary.content}}
+            </p>
+          </div>
+        </md-item-content>
+      </md-item>
+    </md-list>
+  </md-content></div>
+</div>
+</div>
+

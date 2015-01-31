@@ -1,0 +1,14 @@
+body{
+  background: $darkPrimaryColor;
+}
+.frontpage--login{
+  text-align: center;
+  padding-top: 20%;
+  button{
+    margin-top: 20px;
+    @include font-size(2.0);
+  }
+}
+.frontpage--spinner{
+  margin-top: 20px;
+}
